@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import CardList from "./CardList";
+import CardList from "../components/CardList";
 // import { robots as constRobots } from './robots'; //bc robots.js does not export robots using 'default', we have to use {} to destructure
-import SearchBox from "./SearchBox";
+import SearchBox from "../components/SearchBox";
 import './App.css';
-import Scroll from "./Scroll";
+import Scroll from "../components/Scroll";
 
 const App = () => {
     const [robots, setRobots] = useState([]);
@@ -19,7 +19,9 @@ const App = () => {
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => response.json() )
             .then(users => setRobots(users));
-    }, [])
+    }, []) 
+    // To prevent useEffect constantly firing, passing the [] as a second param. 
+    //  The useEffect only runs when it sees a diff on the 2nd param. 
 
     if (robots.length === 0) {
         return <h1 className="tc">Loading...</h1>
