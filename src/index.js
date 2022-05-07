@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+//import Card from './Card';
+import CardList from './CardList';
 import reportWebVitals from './reportWebVitals';
+import 'tachyons';
+import { robots } from './robots'; //bc robots.js does not export robots using 'default', we have to use {} to destructure
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <div>
+    <StrictMode>
+      <CardList robots={robots} />
+    </StrictMode>
+  </div>
 );
 
 // If you want to start measuring performance in your app, pass a function
