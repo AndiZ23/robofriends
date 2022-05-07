@@ -1,17 +1,17 @@
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-//import Card from './Card';
-import CardList from './CardList';
+import App from './App';
+// import Card from './Card';
+// import CardList from './CardList';
 import reportWebVitals from './reportWebVitals';
 import 'tachyons';
-import { robots } from './robots'; //bc robots.js does not export robots using 'default', we have to use {} to destructure
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div>
     <StrictMode>
-      <CardList robots={robots} />
+      <App />
     </StrictMode>
   </div>
 );
